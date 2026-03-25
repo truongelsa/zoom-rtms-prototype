@@ -1,0 +1,13 @@
+services:
+  backend:
+    platform: linux/amd64
+    build:
+      context: .
+    env_file:
+      - .env
+    environment:
+      RECORDINGS_DIR: /app/recordings
+    ports:
+      - "${PORT:-8000}:${PORT:-8000}"
+    volumes:
+      - ./recordings:/app/recordings

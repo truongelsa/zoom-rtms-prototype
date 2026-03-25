@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zoom-rtms-local-prototype"
+version = "0.1.0"
+description = "Local prototype backend for Zoom RTMS + Webhooks"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115.0",
+  "uvicorn[standard]>=0.30.0",
+  "python-dotenv>=1.0.1",
+  "pydantic>=2.8.0",
+  "pydantic-settings>=2.4.0",
+  "rtms==1.0.3"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
